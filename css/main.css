@@ -24,10 +24,12 @@ a {
 
 .global-nav {
   height: 44px;
+  padding: 0 1rem;
 }
 
 .local-nav {
   height: 52px;
+  padding: 0 1rem;
   border-bottom: 1px solid #ddd;
 }
 
@@ -61,4 +63,140 @@ a {
 /* not 괄호 안의 있는 조건은 제외하고 (여집합) 스타일 적용 */
 .local-nav-links a:not(.product-name) {
   margin-left: 2em;
+}
+
+.scroll-section {
+  padding-top: 50vh;
+}
+
+.scroll-section-0 .title {
+  /* html font-size: 14px 이므로 14 * 4px */
+  font-size: 4rem;
+  text-align: center;
+}
+
+.main-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0;
+  /* 
+    em: 동일한 엘리먼트의 font-size를 기준으로 함
+    2.5rem (14 * 2.5px = 35px)의 3배 => height: 105px
+  */
+  height: 3em;
+  font-size: 2.5rem;
+}
+
+.main-message p {
+  font-weight: 700; 
+  text-align: center;
+  line-height: 1.2;
+}
+
+.main-message small {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 1.2rem;
+}
+
+.scroll-section-1 .description {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 1000px;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.scroll-section-1 .description strong {
+  /* float: left 이해 안감 */
+  float: left;
+  margin-right: 0.2em;
+  font-size: 3rem;
+  color: rgb(29, 29, 31);
+}   
+
+.scroll-section-2 .main-message {
+  font-size: 3.5rem;
+}
+
+.desc-message {
+  width: 50%;
+  font-weight: 700;
+}
+
+.pin {
+  width: 1px;
+  height: 100px;
+  background: rgb(29, 29, 31);
+}
+
+.mid-message {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 1000px;
+  font-size: 2rem;
+  color: #888;
+}
+
+.mid-message strong {
+  color: rgb(29, 29, 31);
+}
+
+.canvas-caption {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 1000px;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7rem;
+  background: darkorange;
+  color: white;
+}
+
+/* 최소 1024이면 -> 1024 이상이면 (데스크탑) */
+@media (min-width: 1024px) {
+  .scroll-section-0 .title {
+    /* viewport width의 9% */
+    font-size: 9vw;
+  }
+
+  .main-message {
+    font-size: 4vw;
+  }
+
+  .main-message small {
+    font-size: 1.5vw;
+  }
+  
+  .description {
+    font-size: 2rem;
+  }
+
+  .description strong {
+    font-size: 6rem;
+  }
+
+  .scroll-section-2 .main-message {
+    font-size: 6vw;
+  }
+
+  .desc-message {
+    width: 20%;
+  }
+
+  .mid-message {
+    font-size: 4vw;
+  }
+
+  .canvas-caption {
+    /* vw는 창 크기에 따른 변동값, rem은 고정값 -> 의도에 따라 다름 */
+    font-size: 2rem;
+  }
 }
